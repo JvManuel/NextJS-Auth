@@ -19,14 +19,6 @@ $ (NextJS-Auth/) npm install
 $ (NextJS-Auth/) npm run dev
 ```
 
-### Deploy
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
-
-```bash
-now
-```
-
 ## The idea behind the example
 
 In this example, we authenticate users and store a token in a cookie. The example only shows how the user session works, keeping a user logged in between pages.
