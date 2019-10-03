@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2133,80 +2133,67 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/profile/index.js":
+/*!********************************!*\
+  !*** ./pages/profile/index.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
-var _jsxFileName = "/home/john_vincent/Next/nextjs-auth/pages/index.js";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next-cookies */ "next-cookies");
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/layout */ "./components/layout.js");
+/* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/auth */ "./utils/auth.js");
+/* harmony import */ var _utils_get_host__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/get-host */ "./utils/get-host.js");
+var _jsxFileName = "/home/john_vincent/Next/nextjs-auth/pages/profile/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-const Home = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 5
-  },
-  __self: undefined
-}, __jsx("h1", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 6
-  },
-  __self: undefined
-}, "Cookie-based authentication example"), __jsx("p", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 8
-  },
-  __self: undefined
-}, "Steps to test the functionality:"), __jsx("ol", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 10
-  },
-  __self: undefined
-}, __jsx("li", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11
-  },
-  __self: undefined
-}, "Click login and enter your GitHub username."), __jsx("li", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 12
-  },
-  __self: undefined
-}, "Click home and click profile again, notice how your session is being used through a token stored in a cookie."), __jsx("li", {
-  className: "jsx-3415781418",
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 16
-  },
-  __self: undefined
-}, "Click logout and try to go to profile again. You'll get redirected to the `/login` route.")), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
-  id: "3415781418",
-  __self: undefined
-}, "li.jsx-3415781418{margin-bottom:0.5rem;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2pvaG5fdmluY2VudC9OZXh0L25leHRqcy1hdXRoL3BhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW9CZ0IsQUFHOEIscUJBQ3ZCIiwiZmlsZSI6Ii9ob21lL2pvaG5fdmluY2VudC9OZXh0L25leHRqcy1hdXRoL3BhZ2VzL2luZGV4LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IExheW91dCBmcm9tICdjb21wb25lbnRzL2xheW91dCdcblxuY29uc3QgSG9tZSA9ICgpID0+IChcbiAgPExheW91dD5cbiAgICA8aDE+Q29va2llLWJhc2VkIGF1dGhlbnRpY2F0aW9uIGV4YW1wbGU8L2gxPlxuXG4gICAgPHA+U3RlcHMgdG8gdGVzdCB0aGUgZnVuY3Rpb25hbGl0eTo8L3A+XG5cbiAgICA8b2w+XG4gICAgICA8bGk+Q2xpY2sgbG9naW4gYW5kIGVudGVyIHlvdXIgR2l0SHViIHVzZXJuYW1lLjwvbGk+XG4gICAgICA8bGk+XG4gICAgICAgIENsaWNrIGhvbWUgYW5kIGNsaWNrIHByb2ZpbGUgYWdhaW4sIG5vdGljZSBob3cgeW91ciBzZXNzaW9uIGlzIGJlaW5nXG4gICAgICAgIHVzZWQgdGhyb3VnaCBhIHRva2VuIHN0b3JlZCBpbiBhIGNvb2tpZS5cbiAgICAgIDwvbGk+XG4gICAgICA8bGk+XG4gICAgICAgIENsaWNrIGxvZ291dCBhbmQgdHJ5IHRvIGdvIHRvIHByb2ZpbGUgYWdhaW4uIFlvdSdsbCBnZXQgcmVkaXJlY3RlZCB0b1xuICAgICAgICB0aGUgYC9sb2dpbmAgcm91dGUuXG4gICAgICA8L2xpPlxuICAgIDwvb2w+XG4gICAgPHN0eWxlIGpzeD57YFxuICAgICAgbGkge1xuICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjVyZW07XG4gICAgICB9XG4gICAgYH08L3N0eWxlPlxuICA8L0xheW91dD5cbilcblxuZXhwb3J0IGRlZmF1bHQgSG9tZVxuIl19 */\n/*@ sourceURL=/home/john_vincent/Next/nextjs-auth/pages/index.js */"));
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+
+
+
+class Profile extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  static async getInitialProps(ctx) {
+    const response = await isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()("http://127.0.0.1:3334/v1" + '/a/me', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + next_cookies__WEBPACK_IMPORTED_MODULE_3___default()(ctx).token
+      }
+    }).then(response => response.json());
+    return response;
+  }
+
+  render() {
+    return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 26
+      },
+      __self: this
+    }, "Welcome ", this.props.data.name.firstName, " ", this.props.data.name.lastName));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_utils_auth__WEBPACK_IMPORTED_MODULE_5__["withAuthSync"])(Profile));
 
 /***/ }),
 
@@ -2318,14 +2305,42 @@ const withAuthSync = WrappedComponent => {
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/index.js ***!
-  \******************************/
+/***/ "./utils/get-host.js":
+/*!***************************!*\
+  !*** ./utils/get-host.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// This is not production ready, (except with providers that ensure a secure host, like Now)
+// For production consider the usage of environment variables and NODE_ENV
+function getHost(req) {
+  if (!req) return '';
+  const {
+    host
+  } = req.headers;
+
+  if (host.startsWith('localhost')) {
+    return `http://${host}`;
+  }
+
+  return `https://${host}`;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getHost);
+
+/***/ }),
+
+/***/ 5:
+/*!**************************************!*\
+  !*** multi ./pages/profile/index.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/john_vincent/Next/nextjs-auth/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! /home/john_vincent/Next/nextjs-auth/pages/profile/index.js */"./pages/profile/index.js");
 
 
 /***/ }),
@@ -2426,6 +2441,17 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 
@@ -2540,4 +2566,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=profile.js.map

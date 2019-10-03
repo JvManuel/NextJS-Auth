@@ -8,26 +8,15 @@ Download [`create-next-app`](https://github.com/segmentio/create-next-app) to bo
 
 ```
 npm i -g create-next-app
-create-next-app --example with-cookie-auth with-cookie-auth-app
-```
-
-### Download manually
-
-Download the example [or clone the repo](https://github.com/zeit/next.js):
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-cookie-auth
-cd with-cookie-auth
+create-next-app --example with-cookie-auth NextJS-Auth
 ```
 
 ### Run locally
 
-After you clone the repository you can install the dependencies, run `yarn dev` and start hacking! You'll be able to see the application running locally as if it were deployed.
-
 ```bash
-$ cd with-cookie-auth
-$ (with-cookie-auth/) yarn install
-$ (with-cookie-auth/) yarn dev
+$ cd NextJS-Auth
+$ (NextJS-Auth/) npm install
+$ (NextJS-Auth/) npm run dev
 ```
 
 ### Deploy
