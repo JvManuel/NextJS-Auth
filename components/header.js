@@ -1,58 +1,59 @@
 import Link from 'next/link'
-import { logout } from 'utils/auth'
+import { logout, isAuth } from 'utils/auth'
 
-const Header = props => (
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/login'>
-            <a>Login</a>
-          </Link>
-        </li>
+class Header extends React.Component {
+  menus(){
+    const menuToRender = []
+    const menus = [
+      {
+        name  : 'Home',
+        link  : '/'
+      },
+    ]
+    
+    menus.forEach(function(menuItem, key){
+      menuToRender.push(<li key={key}>
+        <Link href={menuItem.link}>
+          <a>{menuItem.name}</a>
+        </Link>
+      </li>)
+    })
+
+    return menuToRender
+  }
+  authentication(){
+    if(isAuth()){
+      return <React.Fragment>
         <li>
           <Link href='/profile'>
             <a>Profile</a>
           </Link>
         </li>
         <li>
-          <button onClick={logout}>Logout</button>
+          <a onClick={logout}>Logout</a>
         </li>
+      </React.Fragment>
+    }
+    else{
+      return <React.Fragment>
+        <li>
+          <Link href='/login'>
+            <a>Login</a>
+          </Link>
+        </li>
+      </React.Fragment>
+    }
+  }
+  render(){
+    return <header>
+    <nav>
+      <ul>
+        {this.menus()}
+        {this.authentication()}
       </ul>
     </nav>
-    <style jsx>{`
-      ul {
-        display: flex;
-        list-style: none;
-        margin-left: 0;
-        padding-left: 0;
-      }
-
-      li {
-        margin-right: 1rem;
-      }
-
-      li:first-child {
-        margin-left: auto;
-      }
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      header {
-        padding: 0.2rem;
-        color: #fff;
-        background-color: #333;
-      }
-    `}</style>
-  </header>
-)
+    </header>
+  }
+}
 
 export default Header

@@ -2,10 +2,27 @@ import { useEffect } from 'react'
 import Router from 'next/router'
 import nextCookie from 'next-cookies'
 import cookie from 'js-cookie'
+import { userInfo } from 'os'
 
-export const authenticate = (token) => {
+export const authenticate = async (token) => {
   cookie.set('token', token, { expires: 1 })
+  const response = await fetch(process.env.API_URL + '/a/me', {
+    method: 'GET',
+    headers: {
+      'Content-Type' : 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+  })
+  .then(response => response.json())
+
+  cookie.set('user', JSON.stringify(response.data))
   Router.push('/profile')
+}
+
+export const user = () => {
+  if(cookie.get('user') !== undefined){
+    return JSON.parse(cookie.get('user'))
+  }
 }
 
 export const auth = ctx => {
@@ -30,9 +47,17 @@ export const auth = ctx => {
 
 export const logout = () => {
   cookie.remove('token')
+  cookie.remove('user')
   // to support logging out from all windows
   window.localStorage.setItem('logout', Date.now())
   Router.push('/login')
+}
+
+export const isAuth = () => {
+  if(cookie.get('token') == undefined){
+    return false;
+  }
+  return true;
 }
 
 export const withAuthSync = WrappedComponent => {

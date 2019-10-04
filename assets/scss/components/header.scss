@@ -1,0 +1,26 @@
+ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    margin-right: 1rem;
+}
+
+li:first-child {
+    margin-left: auto;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header {
+    padding: 0.2rem;
+    color: #fff;
+    background-color: #333;
+}
